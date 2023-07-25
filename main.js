@@ -29,7 +29,12 @@ for (let i = 0; i < c.length; i++) {
 
 function game(i) {
   if (!filled.includes(i) && game_play==true) {
-    turn++;
+    turn+=1;
+    console.log(turn+"xd")
+    if(turn===9){
+        output.innerHTML=`Draw!!`
+        
+    }
     if (turn % 2 !== 0) {
       c[i].innerHTML = "<i class='fa-solid fa-check' style='color: #6d47d7;'></i>";
       filled.push(i);
@@ -47,6 +52,7 @@ function game(i) {
       console.log(filled);
       checkElementsInArrays(o_filled, check,2,"fa-xmark",i);
     }
+    
   } 
   else {
     console.log("Cell already filled.");
@@ -81,6 +87,8 @@ function checkElementsInArrays(arrays, elements,player,mark,i) {
     
   }
 }
+
+
 
 
 reset_btn.addEventListener('click',(e)=>{
